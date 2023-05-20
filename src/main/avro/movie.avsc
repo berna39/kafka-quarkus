@@ -1,5 +1,5 @@
 {
-  "namespace": "org.acme.kafka.quarkus",
+  "namespace": "com.terminator.dtos",
   "type": "record",
   "name": "MovieDto",
   "fields": [

@@ -7,7 +7,6 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 
 import com.github.javafaker.Faker;
 import com.terminator.dtos.MovieDto;
-
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 

@@ -1,0 +1,11 @@
+{
+  "namespace": "com.terminator.dtos",
+  "type": "record",
+  "name": "CountryDto",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ]
+}
