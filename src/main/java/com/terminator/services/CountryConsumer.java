@@ -10,9 +10,9 @@ import com.terminator.dtos.CountryDto;
 public class CountryConsumer {
     
     @Incoming("countries-in")
-    public CompletionStage<Void> consumeCountry(Message<CountryDto> message){
-        System.out.println("------------------ New Country --------------");
-        System.out.println(message.getPayload()); // we retrieve the message peyload
-        return message.ack();
+    public CompletionStage<Void> consumeCountry(Message<CountryDto> in){
+        System.out.println("------------------ New Incoming Country --------------");
+        System.out.println(in.getPayload()); // we retrieve the message peyload
+        return in.ack();
     }
 }
