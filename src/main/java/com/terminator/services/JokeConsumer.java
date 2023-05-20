@@ -1,4 +1,4 @@
-package com.terminator.service;
+package com.terminator.services;
 
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 

@@ -21,6 +21,7 @@ public class JokeResource {
     public String hello() {
         Faker faker = new Faker();
         jokeEmitter.send(faker.lorem().sentence(100));
+        jokeEmitter.complete();
         return "Welcome to the show";
     }
 }

@@ -1,0 +1,19 @@
+{
+  "namespace": "org.acme.kafka.quarkus",
+  "type": "record",
+  "name": "MovieDto",
+  "fields": [
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "synopsis",
+      "type": "string"
+    },
+    {
+      "name": "views",
+      "type": "int"
+    }
+  ]
+}
