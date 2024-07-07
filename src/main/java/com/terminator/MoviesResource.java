@@ -15,15 +15,16 @@ public class MoviesResource {
     
     private Emitter<MovieDto> emitter;
 
-    public MoviesResource(@Channel("movies-out") Emitter<MovieDto> emitter){
+    public MoviesResource(@Channel("movies-out") Emitter<MovieDto> emitter) {
         this.emitter = emitter;
     }
 
     @GET
     @Path("/")
-    public String produceMovie(){
+    public String produceMovie() {
         Faker faker = new Faker();
-        emitter.send(MovieDto.builder().title(faker.harryPotter().book())
+        emitter.send(MovieDto.builder()
+                .title(faker.harryPotter().book())
                 .synopsis(faker.lorem().paragraph(30))
                 .views(new Random().nextInt(100000))
                 .build());

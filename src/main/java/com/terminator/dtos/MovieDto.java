@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class MovieDto {
+    
     // All POJOs of this class will be serialiezed automatically using the avro schema
     private String title;
     private String synopsis;

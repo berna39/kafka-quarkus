@@ -7,7 +7,7 @@ import com.terminator.dtos.MovieDto;
 public class MovieConsumer {
     
     @Incoming("movies-in")
-    public void produceMovie(MovieDto movie){
+    public void produceMovie(MovieDto movie) {
         System.out.println(movie.toString());
     }
 }

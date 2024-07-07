@@ -22,9 +22,11 @@ public class CountryResource {
 
     @GET
     @Path("/")
-    public String produceCountry(){
+    public String produceCountry() {
         Faker faker = new Faker();
-        emitter.send(Record.of("id-2349023423423", CountryDto.builder().name(faker.country().name()).build()));
+        emitter.send(Record.of("id-2349023423423", CountryDto.builder()
+                                                                    .name(faker.country().name())
+                                                                    .build()));
         return "The country has been produced";
     }
 }
