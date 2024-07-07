@@ -24,7 +24,7 @@ public class CountryResource {
     @Path("/")
     public String produceCountry() {
         Faker faker = new Faker();
-        emitter.send(Record.of("id-2349023423423", CountryDto.builder()
+        emitter.send(Record.of("id-2349023423424", CountryDto.builder()
                                                                     .name(faker.country().name())
                                                                     .build()));
         return "The country has been produced";
