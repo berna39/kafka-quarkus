@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
+import org.eclipse.microprofile.reactive.messaging.Message;
 import org.jboss.logging.Logger;
 
 import com.github.javafaker.Faker;
@@ -25,10 +26,13 @@ public class MovieProducer {
     public void produce() {
         logger.info("Producing a new message");
         Faker faker = new Faker();
-        emitter.send(MovieDto.builder()
+
+        final var payload = MovieDto.builder()
                 .title(faker.harryPotter().book())
                 .synopsis(faker.lorem().paragraph(30))
                 .views(new Random().nextInt(100000))
-                .build());
+                .build();
+        
+        emitter.send(Message.of(payload));
     }
 }
