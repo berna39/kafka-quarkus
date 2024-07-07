@@ -1,27 +1,23 @@
 package com.terminator;
 
-import org.eclipse.microprofile.reactive.messaging.Channel;
-import org.eclipse.microprofile.reactive.messaging.Emitter;
+import com.terminator.services.producers.JokeProducer;
 
-import com.github.javafaker.Faker;
-
+import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/jokes")
+@Path("jokes")
 public class JokeResource {
 
-    @Channel("jokes-producer")
-    Emitter<String> jokeEmitter;
+    @Inject
+    JokeProducer producer;
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        Faker faker = new Faker();
-        jokeEmitter.send(faker.lorem().sentence(100));
-        jokeEmitter.complete();
+        producer.produce();
         return "Welcome to the show";
     }
 }
