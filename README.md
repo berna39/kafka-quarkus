@@ -7,15 +7,25 @@ Quarkus provides support for Apache Kafka through SmallRye Reactive Messaging fr
 Spin up a local Kafka cluster with the docker-compose file located in the {project-folder}/kafka folder
 
 ```shell script
-docker-compose up -d
+cd kafka && docker-compose up -d
 ```
 
 ## Running the application in dev mode
 
-You can run your application in dev mode that enables live coding using:
+You can run the application application in dev mode that enables live coding using:
 
 ```shell script
 ./mvnw compile quarkus:dev
+```
+
+## Produce and Consume events
+
+You can test producing and consuming using these endpoint:
+
+```shell script
+curl http://localhost:8080/countries
+curl http://localhost:8080/movies
+curl http://localhost:8080/jokes
 ```
 
 With Love :)
