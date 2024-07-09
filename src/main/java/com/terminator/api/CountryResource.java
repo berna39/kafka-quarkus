@@ -1,4 +1,4 @@
-package com.terminator;
+package com.terminator.api;
 
 import com.terminator.services.producers.CountryProducer;
 
